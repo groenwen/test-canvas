@@ -11,8 +11,16 @@
     <p>{{message}}</p>
     <canvas ref="canvas" style="border: 1px solid #F7F9FB;"></canvas>
     <form>
-      <input type="text" v-model="name">
+      <div>
+        <label for="name">name</label>
+        <input id="name" type="text" v-model="form.name">
+      </div>
+      <div>
+        <label for="phone">phone</label>
+        <input id="phone" type="number" v-model="form.phone">
+      </div>
     </form>
+    <p><img :src="dataURL" alt=""></p>
   </div>
   <script src="https://unpkg.com/vue@3"></script>
   <script src="./js/all.js"></script>

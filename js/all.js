@@ -2,12 +2,12 @@ const app = Vue.createApp({
   data() {
     return {
       message: 'Vue!',
-      name: 'Vue',
       vueCanvas: null,
       form: {
-        fname: '55555',
-        phone: ''
-      }
+        name: 'September',
+        phone: '20220908'
+      },
+      dataURL: ''
 
     }
   },
@@ -43,8 +43,15 @@ const app = Vue.createApp({
       // 文字
       ctx.font = '32px serif'
       ctx.fillStyle= '#00A0E9'
-      ctx.fillText(this.name, 125, 137)     
+      ctx.fillText(this.form.name, 50, 50)
+      ctx.save()
+      
+      ctx.restore()
+      ctx.font = '16px serif'
+      ctx.fillStyle= '#00A0E9'
+      ctx.fillText(this.form.phone, 50, 100)
 
+      this.dataURL = canvas.toDataURL()
       this.vueCanvas = ctx
       
     },
